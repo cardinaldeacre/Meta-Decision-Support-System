@@ -56,5 +56,7 @@ module.exports = knex => {
 		}
 	});
 
+	router.post('/register');
+
 	return router;
 };
