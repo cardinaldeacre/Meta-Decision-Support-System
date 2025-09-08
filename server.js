@@ -1,11 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const knex = require('./config/database');
+const userRoutes = require('./routes/users')(knex);
 
 const app = express();
-const PORT = 3000;
+const port = 3000;
 // middleware
 app.use(express.json());
-app.use(cors()); // cross-origin resource sharing (frontend-backend communication)
+// cross-origin resource sharing (frontend-backend communication)
+app.use(cors());
 
 // endpoints
 app.get('/', (req, res) => {
@@ -13,6 +16,9 @@ app.get('/', (req, res) => {
 });
 
 // run server
-app.listen(PORT, () => {
-	console.log('Server is running at http://localhost:' + PORT);
+app.listen(port, () => {
+	console.log('Server is running at http://localhost:' + port);
 });
+
+// connect Routes / API
+app.use('/api/users', userRoutes);
