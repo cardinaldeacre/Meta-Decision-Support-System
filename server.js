@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const knex = require('./config/database');
 const userRoutes = require('./routes/users')(knex);
+const caseRoutes = require('./routes/cases')(knex);
 
 const app = express();
 const port = 3000;
@@ -22,3 +23,4 @@ app.listen(port, () => {
 
 // connect Routes / API
 app.use('/api/users', userRoutes);
+app.use('/api/cases', caseRoutes);

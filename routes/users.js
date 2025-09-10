@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const UserController = require('../controllers/UserController');
 
 module.exports = knex => {
 	// get all users
@@ -56,7 +57,10 @@ module.exports = knex => {
 		}
 	});
 
-	router.post('/register');
+	// register
+	router.post('/register', UserController.register);
+	// login
+	router.post('/login', UserController.login);
 
 	return router;
 };

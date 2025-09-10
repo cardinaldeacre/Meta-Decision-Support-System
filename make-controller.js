@@ -23,25 +23,25 @@ const template = `
 // ${name}Controller.js
 // Generated automatically
 
-exports.index = (req, res) => {
+exports.index = async (req, res) => {
   res.send("${name} index");
 };
 
-exports.show = (req, res) => {
+exports.show = async (req, res) => {
   const { id } = req.params;
   res.send("${name} show " + id);
 };
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
   res.send("${name} create");
 };
 
-exports.update = (req, res) => {
+exports.update = async (req, res) => {
   const { id } = req.params;
   res.send("${name} update " + id);
 };
 
-exports.delete = (req, res) => {
+exports.delete = async (req, res) => {
   const { id } = req.params;
   res.send("${name} delete " + id);
 };
