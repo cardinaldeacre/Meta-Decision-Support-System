@@ -55,4 +55,4 @@ if (fs.existsSync(filePath)) {
 
 // tulis file baru
 fs.writeFileSync(filePath, template.trim());
-console.log(`${fileName}Controller berhasil dibuat`);
+console.log(`${fileName} Controller berhasil dibuat`);

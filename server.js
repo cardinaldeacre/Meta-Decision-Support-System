@@ -24,3 +24,4 @@ app.listen(port, () => {
 // connect Routes / API
 app.use('/api/users', userRoutes);
 app.use('/api/cases', caseRoutes);
+app.use('/api/methods', require('./routes/methods'));
